@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #fff;
+  color: #111;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-weight: bold;
+  color: gold;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(white, #fff6e0);
+}
+
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero button {
+  background: gold;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* PRODUCTS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TOOLS */
+.tools {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tool-box {
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* CART */
+.cart {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -3px 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.cart.open {
+  right: 0;
+}
+
+/* INPUT */
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+/* BUTTON */
+button {
+  background: gold;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
