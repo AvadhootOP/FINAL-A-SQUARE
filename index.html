@@ -1,106 +1,1450 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A SQUARE | Premium Nutrition</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>A Square | Fuel Your Day, A Healthy Way</title>
+
+<meta name="description"
+content="Premium Peanut Butter & High Protein Cookies">
+
+<meta name="theme-color"
+content="#ff8c00">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">A SQUARE</div>
+<!-- Loader -->
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#tools">Tools</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div id="loader">
 
-  <div class="cart-icon" onclick="toggleCart()">
-    🛒 <span id="cartCount">0</span>
-  </div>
-</header>
+<div class="loader-logo">
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <h1>A SQUARE</h1>
-  <p>Fuel Your Day A Healthy Way</p>
-  <button onclick="scrollToProducts()">Shop Now</button>
-</section>
+<img src="images/logo.png"
+alt="A Square">
 
-<!-- PRODUCTS -->
-<section id="products" class="section">
-  <h2>Our Premium Products</h2>
-  <div id="productGrid" class="grid"></div>
-</section>
+<h2>A Square</h2>
 
-<!-- TOOLS -->
-<section id="tools" class="section tools">
-  <h2>Fitness Tools</h2>
+<p>Fuel Your Day, A Healthy Way</p>
 
-  <div class="tool-box">
-    <h3>BMI Calculator</h3>
-    <input id="height" placeholder="Height (cm)">
-    <input id="weight" placeholder="Weight (kg)">
-    <button onclick="calcBMI()">Calculate</button>
-    <p id="bmiResult"></p>
-  </div>
-
-  <div class="tool-box">
-    <h3>Protein Intake</h3>
-    <input id="pweight" placeholder="Weight (kg)">
-    <select id="goal">
-      <option value="1.2">Maintenance</option>
-      <option value="1.8">Fat Loss</option>
-      <option value="2.0">Muscle Gain</option>
-    </select>
-    <button onclick="calcProtein()">Calculate</button>
-    <p id="proteinResult"></p>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <h2>About Us</h2>
-  <p>
-    A Square is a premium nutrition brand offering high protein peanut butter
-    and cookies designed for fitness and daily health.
-  </p>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>WhatsApp: 8830626573</p>
-</section>
-
-<!-- CART -->
-<div id="cart" class="cart">
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-
-  <input id="coupon" placeholder="Enter Coupon Code">
-  <button onclick="applyCoupon()">Apply Coupon</button>
-
-  <h3 id="total">Total: ₹0</h3>
-
-  <div class="checkout">
-    <input id="name" placeholder="Name">
-    <input id="phone" placeholder="Phone">
-    <input id="email" placeholder="Email">
-    <input id="address" placeholder="Address">
-
-    <button onclick="placeOrder()">Place Order</button>
-  </div>
-
-  <button onclick="toggleCart()">Close</button>
 </div>
 
+</div>
+
+<!-- Scroll Progress -->
+
+<div id="progressBar"></div>
+
+<!-- Navbar -->
+
+<header>
+
+<div class="logo">
+
+<img src="images/logo.png"
+alt="Logo">
+
+<h2>A Square</h2>
+
+</div>
+
+<nav>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#products">Products</a></li>
+
+<li><a href="#health">Health</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#faq">FAQ</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="nav-icons">
+
+<button id="themeBtn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+<button id="cartBtn">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cartCount">0</span>
+
+</button>
+
+<button id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- Hero -->
+
+<section id="home">
+
+<div class="hero-left">
+
+<span class="premium-badge">
+
+🥜 Premium Nutrition Brand
+
+</span>
+
+<h1>
+
+Fuel Your Day
+
+<span>A Healthy Way</span>
+
+</h1>
+
+<p>
+
+Premium Peanut Butter with
+25% Protein and delicious
+Protein Cookies made for
+fitness lovers and healthy families.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#products"
+class="primary-btn">
+
+Explore Products
+
+</a>
+
+<a href="#health"
+class="secondary-btn">
+
+Protein Calculator
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+
+<h2 class="counter"
+data-target="25">
+
+0
+
+</h2>
+
+<p>% Protein</p>
+
+</div>
+
+<div>
+
+<h2 class="counter"
+data-target="7">
+
+0
+
+</h2>
+
+<p>g Protein Cookie</p>
+
+</div>
+
+<div>
+
+<h2 class="counter"
+data-target="4">
+
+0
+
+</h2>
+
+<p>Flavours</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="images/hero.png"
+alt="Hero Product">
+
+<div class="floating-card">
+
+⭐ Premium Quality
+
+</div>
+
+<div class="floating-card second">
+
+🥜 25% Protein
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Offer -->
+
+<section class="offer-banner">
+
+<div>
+
+🔥 Use Coupon
+
+<b>ASquare10</b>
+
+and Get
+
+<b>10% OFF</b>
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+<div class="section-title">
+
+<h2>
+
+About A Square
+
+</h2>
+
+<p>
+
+Healthy Nutrition.
+Premium Quality.
+
+</p>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<i class="fa-solid fa-seedling"></i>
+
+<h3>
+
+Premium Ingredients
+
+</h3>
+
+<p>
+
+Made using carefully selected ingredients for quality and taste.
+
+</p>
+
+</div>
+
+<div class="about-card">
+
+<i class="fa-solid fa-dumbbell"></i>
+
+<h3>
+
+25% Protein
+
+</h3>
+
+<p>
+
+Our peanut butter contains 25% protein.
+
+</p>
+
+</div>
+
+<div class="about-card">
+
+<i class="fa-solid fa-cookie-bite"></i>
+
+<h3>
+
+Protein Cookie
+
+</h3>
+
+<p>
+
+Each cookie provides 7g protein.
+
+</p>
+
+</div>
+
+<div class="about-card">
+
+<i class="fa-solid fa-truck"></i>
+
+<h3>
+
+Fast Support
+
+</h3>
+
+<p>
+
+Delivery charges vary by location and are confirmed on WhatsApp.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Products -->
+
+<section id="products">
+
+<div class="section-title">
+
+<h2>
+
+Our Products
+
+</h2>
+
+<p>
+
+Choose your favourite flavour.
+
+</p>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="productSearch"
+placeholder="Search products...">
+
+</div>
+
+<div class="product-grid">
+  <!-- Product 1 -->
+
+<div class="product-card bestseller">
+
+<span class="ribbon">Best Seller</span>
+
+<button class="wishlist">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+<img src="images/classic.png" alt="Classic Peanut Butter">
+
+<h3>Classic Peanut Butter</h3>
+
+<p class="protein-tag">🥜 25% Protein</p>
+
+<div class="size-selector">
+
+<select class="size-select">
+
+<option value="70">100g - ₹70</option>
+
+<option value="160">250g - ₹160</option>
+
+<option value="300">500g - ₹300</option>
+
+<option value="450">1kg - ₹450</option>
+
+</select>
+
+</div>
+
+<div class="price">₹<span>70</span></div>
+
+<div class="quantity-box">
+
+<button class="minus">−</button>
+
+<input type="number" value="1" min="1">
+
+<button class="plus">+</button>
+
+</div>
+
+<button class="cart-btn"
+data-name="Classic Peanut Butter"
+data-price="70">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<!-- Product 2 -->
+
+<div class="product-card">
+
+<button class="wishlist">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+<img src="images/crunchy.png" alt="Classic Crunchy">
+
+<h3>Classic Crunchy Peanut Butter</h3>
+
+<p class="protein-tag">🥜 25% Protein</p>
+
+<div class="size-selector">
+
+<select class="size-select">
+
+<option value="75">100g - ₹75</option>
+
+<option value="170">250g - ₹170</option>
+
+<option value="310">500g - ₹310</option>
+
+<option value="450">1kg - ₹450</option>
+
+</select>
+
+</div>
+
+<div class="price">₹<span>75</span></div>
+
+<div class="quantity-box">
+
+<button class="minus">−</button>
+
+<input type="number" value="1" min="1">
+
+<button class="plus">+</button>
+
+</div>
+
+<button class="cart-btn"
+data-name="Classic Crunchy Peanut Butter"
+data-price="75">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<!-- Product 3 -->
+
+<div class="product-card">
+
+<button class="wishlist">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+<img src="images/chocolate.png" alt="Chocolate">
+
+<h3>Chocolate Peanut Butter</h3>
+
+<p class="protein-tag">🥜 25% Protein</p>
+
+<div class="size-selector">
+
+<select class="size-select">
+
+<option value="85">100g - ₹85</option>
+
+<option value="200">250g - ₹200</option>
+
+<option value="370">500g - ₹370</option>
+
+<option value="500">1kg - ₹500</option>
+
+</select>
+
+</div>
+
+<div class="price">₹<span>85</span></div>
+
+<div class="quantity-box">
+
+<button class="minus">−</button>
+
+<input type="number" value="1" min="1">
+
+<button class="plus">+</button>
+
+</div>
+
+<button class="cart-btn"
+data-name="Chocolate Peanut Butter"
+data-price="85">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<!-- Product 4 -->
+
+<div class="product-card">
+
+<button class="wishlist">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+<img src="images/chocolate-crunchy.png" alt="Chocolate Crunchy">
+
+<h3>Chocolate Crunchy Peanut Butter</h3>
+
+<p class="protein-tag">🥜 25% Protein</p>
+
+<div class="size-selector">
+
+<select class="size-select">
+
+<option value="90">100g - ₹90</option>
+
+<option value="210">250g - ₹210</option>
+
+<option value="380">500g - ₹380</option>
+
+<option value="550">1kg - ₹550</option>
+
+</select>
+
+</div>
+
+<div class="price">₹<span>90</span></div>
+
+<div class="quantity-box">
+
+<button class="minus">−</button>
+
+<input type="number" value="1" min="1">
+
+<button class="plus">+</button>
+
+</div>
+
+<button class="cart-btn"
+data-name="Chocolate Crunchy Peanut Butter"
+data-price="90">
+
+Add To Cart
+
+</button>
+
+</div>
+
+<!-- Product 5 -->
+
+<div class="product-card cookie-card">
+
+<span class="new-tag">NEW</span>
+
+<button class="wishlist">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+<img src="images/cookie.png" alt="Protein Cookie">
+
+<h3>Protein Cookie</h3>
+
+<p class="protein-tag">🍪 7g Protein</p>
+
+<p class="coming-soon">
+
+Price Coming Soon
+
+</p>
+
+<div class="cookie-features">
+
+<span>High Protein</span>
+
+<span>Healthy Snack</span>
+
+<span>Freshly Baked</span>
+
+</div>
+
+<button class="notify-btn">
+
+Notify Me
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+HEALTH CALCULATOR
+========================== -->
+
+<section id="health">
+
+<div class="section-title">
+
+<h2>Health Calculator</h2>
+
+<p>
+
+Check your BMI and Recommended Daily Protein Intake.
+
+</p>
+
+</div>
+
+<div class="health-container">
+
+<div class="calculator-card">
+
+<h3>BMI & Protein Calculator</h3>
+
+<div class="input-group">
+
+<label>Height (cm)</label>
+
+<input
+type="number"
+id="height"
+placeholder="Enter your height">
+
+</div>
+
+<div class="input-group">
+
+<label>Weight (kg)</label>
+
+<input
+type="number"
+id="weight"
+placeholder="Enter your weight">
+
+</div>
+
+<button
+class="calculate-btn"
+onclick="calculateHealth()">
+
+Calculate
+
+</button>
+
+<div id="healthResult"></div>
+
+</div>
+
+<div class="health-info">
+
+<div class="info-box">
+
+<h3>🥜 Peanut Butter</h3>
+
+<h2>25% Protein</h2>
+
+<p>
+
+Rich in protein and healthy fats.
+Perfect for breakfast,
+gym lovers and healthy snacking.
+
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>🍪 Protein Cookie</h3>
+
+<h2>7g Protein</h2>
+
+<p>
+
+Delicious high-protein snack
+to satisfy your cravings.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+WHY CHOOSE US
+========================== -->
+
+<section id="why">
+
+<div class="section-title">
+
+<h2>Why Choose A Square?</h2>
+
+<p>
+
+Premium Quality. Better Nutrition.
+
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<i class="fa-solid fa-medal"></i>
+
+<h3>Premium Quality</h3>
+
+<p>
+
+Made using carefully selected ingredients.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-dumbbell"></i>
+
+<h3>25% Protein</h3>
+
+<p>
+
+Supports an active lifestyle.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>Healthy Choice</h3>
+
+<p>
+
+Great source of healthy nutrition.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-box"></i>
+
+<h3>Fresh Packaging</h3>
+
+<p>
+
+Packed hygienically for freshness.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-cookie-bite"></i>
+
+<h3>Protein Cookie</h3>
+
+<p>
+
+Contains 7g protein per cookie.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>Customer Support</h3>
+
+<p>
+
+Quick support through WhatsApp.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+LIVE STATS
+========================== -->
+
+<section id="stats">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h2 class="counter"
+data-target="25">
+
+0
+
+</h2>
+
+<p>% Protein</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 class="counter"
+data-target="7">
+
+0
+
+</h2>
+
+<p>g Protein Cookie</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 class="counter"
+data-target="4">
+
+0
+
+</h2>
+
+<p>Peanut Butter Flavours</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 class="counter"
+data-target="100">
+
+0
+
+</h2>
+
+<p>% Quality Commitment</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+REVIEWS
+========================== -->
+
+<section id="reviews">
+
+<div class="section-title">
+
+<h2>Customer Reviews</h2>
+
+<p>
+
+Trusted by our customers.
+
+</p>
+
+</div>
+
+<div class="review-slider">
+
+<div class="review-card">
+
+★★★★★
+
+<p>
+
+Amazing taste and texture.
+
+Will definitely order again!
+
+</p>
+
+<h4>- Happy Customer</h4>
+
+</div>
+
+<div class="review-card">
+
+★★★★★
+
+<p>
+
+Perfect for breakfast.
+
+Loved the quality.
+
+</p>
+
+<h4>- Fitness Enthusiast</h4>
+
+</div>
+
+<div class="review-card">
+
+★★★★★
+
+<p>
+
+Protein Cookie is delicious.
+
+Highly recommended.
+
+</p>
+
+<h4>- Customer</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FAQ
+========================== -->
+
+<section id="faq">
+
+<div class="section-title">
+
+<h2>Frequently Asked Questions</h2>
+
+</div>
+
+<div class="faq-item">
+
+<button>
+
+Does Peanut Butter contain protein?
+
+</button>
+
+<div>
+
+Yes.
+
+Our Peanut Butter contains approximately 25% protein.
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button>
+
+How much protein is in one cookie?
+
+</button>
+
+<div>
+
+Each cookie contains approximately 7g protein.
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button>
+
+How do I order?
+
+</button>
+
+<div>
+
+Simply add products to the cart and place your order via WhatsApp.
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button>
+
+How are delivery charges calculated?
+
+</button>
+
+<div>
+
+Delivery charges depend on your location and will be shared manually on WhatsApp before your order is confirmed.
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+CONTACT
+========================== -->
+
+<section id="contact">
+
+<div class="section-title">
+
+<h2>Contact Us</h2>
+
+<p>We'd love to hear from you.</p>
+
+</div>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<div class="contact-card">
+
+<i class="fa-solid fa-phone"></i>
+
+<h3>Call Us</h3>
+
+<p>+91 8830626573</p>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<h3>WhatsApp</h3>
+
+<a href="https://wa.me/918830626573" target="_blank">
+
+Chat Now
+
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Email</h3>
+
+<p>contactasquare2025@gmail.com</p>
+
+</div>
+
+<div class="contact-card">
+
+<i class="fa-brands fa-instagram"></i>
+
+<h3>Instagram</h3>
+
+<a href="https://www.instagram.com/official_asquare2025?igsh=NGJ4ZmtvMmExbGJm" target="_blank">
+
+@official_asquare2025
+
+</a>
+
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<input
+type="text"
+placeholder="Your Name">
+
+<input
+type="email"
+placeholder="Your Email">
+
+<textarea
+placeholder="Your Message"></textarea>
+
+<button>
+
+Send Message
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+NEWSLETTER
+========================== -->
+
+<section class="newsletter">
+
+<h2>
+
+Stay Updated
+
+</h2>
+
+<p>
+
+Get updates about new products and offers.
+
+</p>
+
+<div class="newsletter-form">
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<button>
+
+Subscribe
+
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+CART DRAWER
+========================== -->
+
+<div id="cartDrawer">
+
+<div class="cart-header">
+
+<h2>
+
+Shopping Cart
+
+</h2>
+
+<button id="closeCart">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div id="cartItems">
+
+Your cart is empty.
+
+</div>
+
+<div class="cart-summary">
+
+<h3>
+
+Subtotal
+
+<span id="subtotal">
+
+₹0
+
+</span>
+
+</h3>
+
+<input
+type="text"
+id="coupon"
+placeholder="Coupon Code">
+
+<button id="applyCoupon">
+
+Apply Coupon
+
+</button>
+
+<h2>
+
+Total
+
+<span id="grandTotal">
+
+₹0
+
+</span>
+
+</h2>
+
+<p class="delivery-note">
+
+🚚 Delivery charges vary by location and will be shared on WhatsApp.
+
+</p>
+
+<button id="checkout">
+
+Proceed To Order
+
+</button>
+
+</div>
+
+</div>
+
+<!-- =========================
+WHATSAPP CHECKOUT POPUP
+========================== -->
+
+<div id="checkoutPopup">
+
+<div class="popup-box">
+
+<h2>
+
+Complete Your Order
+
+</h2>
+
+<input
+type="text"
+id="customerName"
+placeholder="Full Name">
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="Phone Number">
+
+<textarea
+id="customerAddress"
+placeholder="Full Address"></textarea>
+
+<input
+type="text"
+id="customerCity"
+placeholder="City">
+
+<input
+type="number"
+id="customerPin"
+placeholder="Pincode">
+
+<button id="placeOrder">
+
+Place Order on WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Floating WhatsApp -->
+
+<a
+href="https://wa.me/918830626573"
+target="_blank"
+class="floating-whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- Back To Top -->
+
+<button id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- Footer -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>
+
+A Square
+
+</h2>
+
+<p>
+
+Fuel Your Day, A Healthy Way.
+
+Premium Peanut Butter & Healthy Snacks.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+
+Quick Links
+
+</h3>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#products">Products</a></li>
+
+<li><a href="#health">Health</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Our Products
+
+</h3>
+
+<ul>
+
+<li>Classic Peanut Butter</li>
+
+<li>Classic Crunchy</li>
+
+<li>Chocolate Peanut Butter</li>
+
+<li>Chocolate Crunchy</li>
+
+<li>Protein Cookie</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+
+Follow Us
+
+</h3>
+
+<a href="https://www.instagram.com/official_asquare2025?igsh=NGJ4ZmtvMmExbGJm">
+
+Instagram
+
+</a>
+
+<br><br>
+
+<a href="#">
+
+YouTube
+
+</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 A Square
+
+<br>
+
+Fuel Your Day, A Healthy Way
+
+</div>
+
+</footer>
+
 <script src="script.js"></script>
+
 </body>
-</html>
+
+  </html>
